@@ -38,10 +38,29 @@ for(i=1; i<= difficult; i++){
 
 let btnPlayEl = document.getElementById("my-btn-play");
 let gridEl = document.getElementById("my-grid");
-let difficult = 100;
+let difficult;
+
 
 btnPlayEl.addEventListener("click", function (){
     gridEl.innerHTML = "";
+    
+    let level = document.getElementById("level").value;
+    
+    
+    if(level == 1){
+        difficult = 100;
+        document.getElementById("my-grid").style.width = "600px";
+        
+    }else if(level == 2){
+        difficult = 81;
+        document.getElementById("my-grid").style.width = "540px";
+        
+    }else if(level == 3) {
+        difficult = 49;
+        document.getElementById("my-grid").style.width = "420px";
+    }
+
+
 
     for(let i=1; i<= difficult; i++){
         let newCell = createNewCellWithNumber(i);
