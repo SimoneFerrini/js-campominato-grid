@@ -23,7 +23,7 @@ Consegna:
 -creare var difficult = 100;
 
 onclick btn-play{
-}
+reset my-grid;
 for(i=1; i<= difficult; i++){
     -crea nuova cella classe my cell
     -nuovacella.innerhtmal = 1;
@@ -41,14 +41,24 @@ let gridEl = document.getElementById("my-grid");
 let difficult = 100;
 
 btnPlayEl.addEventListener("click", function (){
+    gridEl.innerHTML = "";
+
     for(let i=1; i<= difficult; i++){
-        let newCell = document.createElement("div");
-        newCell.classList.add("my-cell");
-        gridEl.append(newCell);
-        newCell.innerHTML = i;
+        let newCell = createNewCellWithNumber(i);
+
         newCell.addEventListener("click", function() {
             newCell.classList.add("active");
             console.log(i);
         })
     }
 })
+
+
+function createNewCellWithNumber(num){
+    let newCell = document.createElement("div");
+    newCell.classList.add("my-cell");
+    gridEl.append(newCell);
+    newCell.textContent = num;
+
+    return newCell;
+}

@@ -46,7 +46,10 @@
 }
 
 .my-main-display{
+    display: flex;
+    justify-content: center;
     padding: 3em 0;
+    
 }
 
 #my-grid{
@@ -59,10 +62,12 @@
 
 
 .my-cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 60px;
     height: 60px;
-
-    padding: 5px 15px;
 
     border: 1px solid black;
 }
